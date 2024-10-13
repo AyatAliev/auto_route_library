@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_route/src/transculent_page.dart';
 import 'package:auto_route/src/utils.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
@@ -88,6 +89,7 @@ class AutoRoute {
 
   /// Builds a [AutoRoutePage] from [RouteData]
   AutoRoutePage<T> buildPage<T>(RouteData data) {
+    return TransculentPage(routeData: data, child: builder(data));
     return AutoRoutePage<T>(
       child: builder(data),
       routeData: data,
